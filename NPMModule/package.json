@@ -1,0 +1,14 @@
+{
+  "name": "xixi-npm",
+  "version": "1.0.0",
+  "description": "圆的面积和周长计算以及方差均值的计算",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "xixi"
+  ],
+  "author": "Christy",
+  "license": "ISC"
+}
