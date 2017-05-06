@@ -1,0 +1,75 @@
+{include file='index/header' title='主页'}     
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" style="color:#ffffff">夕夕</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">
+                <span class="glyphicon glyphicon-user" aria-hidden="true"/><span class="fontChange"> {$name}</span></a></li>
+           
+            
+            <li><a href="__ROOT__/logout">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"/><span class="fontChange"> 退出</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="/home">
+                <span class="glyphicon glyphicon-home" aria-hidden="true"/><span class="fontChange"> 后台首页</span></a></li>
+            <li><a href="/post">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"/><span class="fontChange"> 发布日记</span></a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+           
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">我的日记</h3>
+                <a href="/post"><button type="button" class="btn btn-warning btn-sm positionChange">
+                    <span class="glyphicon glyphicon-pencil" /><span class="fontChange"> 发布日记</span></button></a>
+               
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>标题</th>
+                  <th>时间</th>
+                  <th>标签</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                {volist name='list' id='v'}
+                <tr>
+                    <td>{$v.id}</td>
+                    <td><a href="__ROOT__/detail/{$v.id}">{$v.title}</a></td>
+                    <td>{$v.create_time}</td>
+                    <td>{$v.key}</td>
+                    <td> <a href="__ROOT__/delete/{$v.id}" class="btn btn-danger">删除</a></td>
+                </tr>
+                {/volist}
+                {$list->render()}
+              </tbody>
+            </table>
+          </div>
+        
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{include file='index/footer'}   
+
+
