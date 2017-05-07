@@ -16,6 +16,8 @@ var http = require('http');
 var path = require('path');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
+var waterline = require('./config/waterline');
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -45,6 +47,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(function(req, res, next){
+    req.models = app.get('models');
+    next();
+  });
 
 app.use('/', index);
 app.use('/users', users);
