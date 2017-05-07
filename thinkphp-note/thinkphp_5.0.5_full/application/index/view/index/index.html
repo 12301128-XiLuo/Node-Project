@@ -22,9 +22,9 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="/home">
+            <li class="active"><a href="/">
                 <span class="glyphicon glyphicon-home" aria-hidden="true"/><span class="fontChange"> 后台首页</span></a></li>
-            <li><a href="/post">
+            <li><a href="/addpage">
                 <span class="glyphicon glyphicon-cog" aria-hidden="true"/><span class="fontChange"> 发布日记</span></a></li>
           </ul>
         </div>
@@ -33,7 +33,7 @@
           <div class="panel panel-primary">
             <div class="panel-heading">
                 <h3 class="panel-title">我的日记</h3>
-                <a href="/post"><button type="button" class="btn btn-warning btn-sm positionChange">
+                <a href="addpage"><button type="button" class="btn btn-warning btn-sm positionChange">
                     <span class="glyphicon glyphicon-pencil" /><span class="fontChange"> 发布日记</span></button></a>
                
             </div>
@@ -52,10 +52,10 @@
                 {volist name='list' id='v'}
                 <tr>
                     <td>{$v.id}</td>
-                    <td><a href="__ROOT__/detail/{$v.id}">{$v.title}</a></td>
+                    <td><a href="/detail/{$v.id}">{$v.title}</a></td>
                     <td>{$v.create_time}</td>
                     <td>{$v.key}</td>
-                    <td> <a href="__ROOT__/delete/{$v.id}" class="btn btn-danger">删除</a></td>
+                    <td> <a href="/delete/{$v.id}" class="btn btn-danger">删除</a></td>
                 </tr>
                 {/volist}
                 {$list->render()}

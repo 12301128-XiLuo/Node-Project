@@ -17,5 +17,14 @@ return [
         ':id'   => ['index/hello', ['method' => 'get'], ['id' => '\d+']],
         ':name' => ['index/hello', ['method' => 'post']],
     ],
-
+   'detail/:id'=>'index/detail',
+   'delete/:id'=>'index/delete',
+   'addpage'=>'index/addpage',
+   'addnote'=>'index/addnote',
+   'login'=>'login/index',
+   'login_submit'=>'login/login',
+   'register'=>'regist/index',
+   'regist_submit'=>'regist/regist',
+   'logout'=>'index/logout',
+   'check'=>'index/check'
 ];
