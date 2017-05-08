@@ -19,15 +19,15 @@
       <% posts.forEach(function (post, index) { %>
         <div class="header clearfix">
             <h3 class="text-muted"><%= post.title %></h3>
-            <span class="">作者：<%= post.email 
+            <span class="">作者：<%= post.user_name 
 
 %>&nbsp;&nbsp;&nbsp;</span>
-            <span><%= post.time.minute %></span>
+            <span><%= post.create_time %></span>
             <span class="label label-primary"> <%= post.key %> </span>
           </div>
 
           <div class="jumbotron">
-            <p class="lead"><%= post.post %></p>
+            <p class="lead"><%= post.content %></p>
           </div>
       <% }) %>
 

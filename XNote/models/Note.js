@@ -9,8 +9,7 @@ module.exports = Waterline.Collection.extend({
     attributes: {
         id: {
             type: 'integer',
-            primaryKey:true,
-            autoIncrement: true
+            primaryKey:true
         },
         title: {
             type: 'string'

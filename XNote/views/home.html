@@ -8,7 +8,7 @@
           <ul class="nav navbar-nav navbar-right">
             <% if (user) { %>
               <li><a href="#">
-                <span class="glyphicon glyphicon-user" aria-hidden="true"/><span class="fontChange"> <%= user.email %></span></a></li>
+                <span class="glyphicon glyphicon-user" aria-hidden="true"/><span class="fontChange"> <%= user.user_name %></span></a></li>
             <% } %>
             
             <li><a href="/logout">
@@ -53,8 +53,8 @@
                 <% posts.forEach(function (post, index) { %>
                     <tr>
                       <td><a href="/detail?id=<%= post.id %>"><%= post.title %></a></td>
-                      <td><%= post.time.minute %></td>
-                      <td><%= post.email %></td>
+                      <td><%= post.create_time %></td>
+                      <td><%= post.user_name %></td>
                       <td><%= post.key %></td>
                     </tr>
                 <% }) %>
@@ -65,39 +65,6 @@
                 
             </div>
           </div>
-          <% if (user.email == '1601210650') { %>  
-            <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title">全部列表</h3>
-               
-            </div>
-            <div class="panel-body">
-                <div class="table-responsive">
-                    <table class="table table-striped">
-                      <thead>
-                        <tr>
-                          <th>标题</th>
-                          <th>时间</th>
-                          <th>作者</th>
-                          <th>标签</th>
-
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <% allPosts.forEach(function (allPost, index) { %>
-                            <tr>
-                              <td><a href="/detail?id=<%= allPost.id %>"><%= allPost.title %></a></td>
-                              <td><%= allPost.time.minute %></td>
-                              <td><%= allPost.email %></td>
-                              <td><%= allPost.key %></td>
-                            </tr>
-                        <% }) %>
-                      </tbody>
-                    </table>
-                  </div>
-            </div>
-          </div>
-          <% } %>
         </div>
       </div>
     </div>

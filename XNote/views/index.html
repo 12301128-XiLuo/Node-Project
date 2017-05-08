@@ -22,9 +22,9 @@
       <form class="form-signin fontChange" method="post">
         <h2 class="form-signin-heading">登录</h2>
         <label for="inputEmail" class="sr-only">用户名</label>
-        <input type="text" name="email" id="inputEmail" class="form-control" placeholder="用户名" required autofocus>
+        <input type="text" name="email" id="inputEmail" class="form-control" placeholder="用户名" pattern="^[a-zA-Z0-9_]{3,20}$" title="请输入3-20的字母数字下划线" required autofocus>
         <label for="inputPassword" class="sr-only">密码</label>
-        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="密码" required>
+        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="密码" pattern="^(?=.*[0-9].*)(?=.*[A-Z].*)(?=.*[a-z].*).{6,}$" title="请输入6位以上的字符，同时包含大小写字母数字" required>
         
         <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
         <% if (error) { %>
