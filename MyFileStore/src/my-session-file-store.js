@@ -41,25 +41,44 @@ module.exports = function (session) {
     helpers.get(sessionId, this.options, callback);
   };
 
+  /**
+   * [set 写入文件]
+   * @param {[type]}   sessionId [description]
+   * @param {[type]}   session   [description]
+   * @param {Function} callback  [description]
+   */
   MyFileStore.prototype.set = function (sessionId, session, callback) {
     helpers.set(sessionId, session, this.options, callback);
   };
 
+  /**
+   * [destroy 根据sessionId删除]
+   * @param  {[type]}   sessionId [description]
+   * @param  {Function} callback  [description]
+   * @return {[type]}             [description]
+   */
   MyFileStore.prototype.destroy = function (sessionId, callback) {
     helpers.destroy(sessionId, this.options, callback);
   };
 
+  /**
+   * [length 获取文件个数]
+   * @param  {Function} callback [description]
+   * @return {[type]}            [description]
+   */
   MyFileStore.prototype.length = function (callback) {
     helpers.length(this.options, callback);
   };
 
+  /**
+   * [clear 清除所有session]
+   * @param  {Function} callback [description]
+   * @return {[type]}            [description]
+   */
   MyFileStore.prototype.clear = function (callback) {
     helpers.clear(this.options, callback);
   };
 
-  MyFileStore.prototype.list = function (callback) {
-    helpers.list(this.options, callback);
-  };
 
 
   return MyFileStore;

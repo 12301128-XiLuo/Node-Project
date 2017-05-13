@@ -139,6 +139,33 @@ var helpers = {
     });
   },
 
+  /**
+   * [clear 清除所有session]
+   * @param  {[type]}   options  [description]
+   * @param  {Function} callback [description]
+   * @return {[type]}            [description]
+   */
+  clear: function (options, callback) {
+    fs.readdir(options.path, function (err, files) {
+      if (err) return callback([err]);
+      if (files.length <= 0) return callback();
+
+      var errors = [];
+      files.forEach(function (file, i) {
+        fs.remove(path.join(options.path, file), function (err) {
+            if (err) {
+              errors.push(err);
+            }
+            // TODO: wrong call condition (call after all completed attempts to remove instead of after completed attempt with last index)
+            if (i >= files.length - 1) {
+              errors.length > 0 ? callback(errors) : callback();
+            }
+          });
+        
+      });
+    });
+  },
+
   //加密算法
   encAlgorithm: 'aes-256-ctr',
   /**
