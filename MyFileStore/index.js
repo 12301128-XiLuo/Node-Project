@@ -1,5 +1,5 @@
 var session = require('express-session');
-var MyFileStore = require('./lib/my-session-file-store')(session);
+var MyFileStore = require('./src/my-session-file-store')(session);
 var express = require('express');
 var app = express();
 
@@ -16,6 +16,7 @@ app.get('/', function (req, res) {
     res.write('<p>views: ' + req.session.views + '</p>');
     res.end();
   } else {
+  	//存储的数据
     req.session.views = 1;
     res.end('Welcome to the file session demo. Refresh page!');
   }
