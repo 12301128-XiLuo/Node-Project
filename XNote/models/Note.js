@@ -4,12 +4,13 @@ var Waterline = require('waterline');
 module.exports = Waterline.Collection.extend({
 
     identity: 'note',
-    connection: 'mongo',
+    connection: 'mysql',
 
     attributes: {
         id: {
-            type: 'integer',
-            primaryKey:true
+            type: 'string',
+            primaryKey:true,
+            autoIncrement: true
         },
         title: {
             type: 'string'

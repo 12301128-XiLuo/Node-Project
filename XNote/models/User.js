@@ -3,7 +3,7 @@ var Waterline = require('waterline');
 module.exports = Waterline.Collection.extend({
 
     identity: 'user',
-    connection: 'mongo',
+    connection: 'mysql',
 
     attributes: {
         user_id: {

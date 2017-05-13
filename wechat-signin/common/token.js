@@ -97,7 +97,7 @@ function saveAccessToken(access_token){
         if (err) {
           console.log('Error: ' + err.message);
         }
-        //console.log(token);
+        console.log(token);
     });
 }
 /**

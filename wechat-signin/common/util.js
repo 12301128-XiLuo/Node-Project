@@ -15,12 +15,12 @@ var request = require('request');
  * @param    req      
  */
 function getapiTicket(callback,res,req){
-	var apiTicket = 'kgt8ON7yVITDhtdwci0qeWuGDHT1lV2r96xhNURymc8cUorvoTsndv-MQvGO-jTZ2FGNGcNzgI52NMnXOvvIGw';
+	var apiTicket = 'kgt8ON7yVITDhtdwci0qeWuGDHT1lV2r96xhNURymc9qWbwmGa30rszLRWIeg0Jl9Qk2WfnAzXo8NvvztPrzXw';
 	Ticket.get('wechat', function (err, ticket) {
         if (!ticket) {
           console.log('null');
         }
-        apiTicket = ticket.apiTicket;
+        //apiTicket = ticket.apiTicket;
         dd = checkSignature(apiTicket,req);
         callback(res,dd);
     });
@@ -37,6 +37,7 @@ function checkSignature(apiTicket,req){
 	var key = ["jsapi_ticket="+apiTicket,"timestamp="+parseInt(timestamp/1000),"noncestr="+nonceStr,"url="+url].sort().join('&');
  	//调用sign方法获取签名
     var data = sign(apiTicket,url);
+    console.log("test:"+key);
  	return data;
 }
 
