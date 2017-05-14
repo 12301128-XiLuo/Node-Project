@@ -3,7 +3,8 @@ var MyFileStore = require('./src/my-session-file-store')(session);
 var express = require('express');
 var app = express();
 
-var fileName = './file'
+var fileName = './file';
+//用法
 app.use(session({
     store: new MyFileStore(fileName),
     secret: 'xixi'

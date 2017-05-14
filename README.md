@@ -5,12 +5,12 @@ Node作业合集
 根据express-session的store接口实现一个存储到文件的引擎。
 
 在初始化session时，代码如下：
-<code>
+``` javascript
 app.use(session({
   secret: 'your secret key',
   store: new MyFileStore()
 }));
-</code>
+```
 其中new MyFileStore()即为创建一个自定义的存储引擎实例。
 
 # thinkphp-note

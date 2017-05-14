@@ -156,7 +156,6 @@ var helpers = {
             if (err) {
               errors.push(err);
             }
-            // TODO: wrong call condition (call after all completed attempts to remove instead of after completed attempt with last index)
             if (i >= files.length - 1) {
               errors.length > 0 ? callback(errors) : callback();
             }
