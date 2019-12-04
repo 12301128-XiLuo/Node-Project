@@ -21,7 +21,6 @@ node.js 操作各种数据库
 
 # cookie-session
 cookie-session实验
-原地址：https://github.com/12301128-XiLuo/cookie-session.git
 
 # XNote
 在线日记本(增加waterline)
@@ -29,7 +28,6 @@ cookie-session实验
 
 # wechat-signin
 微信公众号签到应用
-原地址：https://github.com/12301128-XiLuo/wechat-signin.git
 
 # wechat-token
 微信公众号获取access_token
